@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+@font-face {
+    font-family: 'Matrix';
+    src: url('../fonts/matrix.ttf') format('opentype'), url('') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Inicial Home */
+body {
+    background-color: #003398;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 40%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    position: relative;
+    background-color: #fff;
+    color: #003398;
+    border-radius: 50px;
+    font-family: 'Goldman', cursive;
+}
+
+.wrapper .image {
+    width: 200px;
+    margin: auto auto 4% auto;
+}
+
+.wrapper h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.wrapper .answers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.wrapper .answers .btn {
+    padding: 2.5% 6%;
+    background-color: #003398;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.wrapper .answers .btn:hover {
+    background-color: #003398b2;
+}
+
+.confirmation {
+    font-family: 'Cookie', cursive;
+    font-size: 2.5em;
+    display: none;
+}
+
+#confirmation-title {
+    text-align: center;
+}
+
+/* The Matrix */
+main {
+    display: none;
+}
+
+@keyframes vanish {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes bigFour {
+    0% {opacity: 1; font-size: 4em;}
+    100% {opacity: 0; font-size: 20em;}
+}
+
+/* Responsivity */
+/* SCREEN MAX-WIDTH 1600PX */
+@media screen and (max-width: 1600px) {
+    .wrapper {
+        width: 50%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 1500PX */
+@media screen and (max-width: 1500px) {
+    .confirmation {
+        font-size: 2em;
+    }
+}
+
+/* SCREEN MAX-WIDTH 1300PX */
+@media screen and (max-width: 1300px) {
+    .wrapper {
+        width: 60%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 1000PX */
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 800PX */
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 700PX */
+@media screen and (max-width: 700px) {
+    .wrapper {
+        width: 95%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 600PX */
+@media screen and (max-width: 600px) {
+    .wrapper h1 {
+        font-size: 2em;
+    }
+}
+
+/* SCREEN MAX-WIDTH 400PX */
+@media screen and (max-width: 400px) {
+    .wrapper .answers .btn {
+        margin-top: 4%;
+        padding: 4% 8%;
+    }
+}
+
+/* SCREEN MAX-WIDTH 300PX */
+@media screen and (max-width: 300px) {
+    .wrapper h1 {
+        font-size: 1.5em;
+    }
+
+    .wrapper .answers .btn {
+        margin-top: 4%;
+        padding: 5% 12%;
+    }
+}
