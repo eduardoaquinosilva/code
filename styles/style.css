@@ -126,7 +126,7 @@ main {
     border-radius: 30px;
 }
 
-.show .inside {
+.show .inside1 {
     animation: modal 0.5s;
 }
 
