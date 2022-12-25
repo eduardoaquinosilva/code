@@ -5,6 +5,7 @@ const noBtn = document.querySelector('#no')
 const confirmation = document.querySelector('.confirmation')
 const answers = document.querySelector('.answers')
 const main = document.querySelector('main')
+let countNo = 0
 
 const yesAnswerMethod = () => {
     document.body.style.widows = '100vw'
@@ -192,6 +193,29 @@ const noAnswerMethod = () => {
 
     noBtn.style.left = xPosition >= wrapper.clientWidth / 2 ? `${xPosition - noBtn.clientWidth}px` : `${xPosition}px`
     noBtn.style.top = yPosition >= wrapper.clientHeight / 2 ? `${yPosition - noBtn.clientHeight}px` : `${yPosition}px`
+
+    function startModal(modalId) {
+        const modal = document.getElementById(modalId)
+        if (modal) {
+            modal.classList.add('show')
+            modal.addEventListener('click', (event) => {
+                if (event.target.id == modalId) {
+                    modal.classList.remove('show')
+            }
+        })
+        }
+    }
+
+    const innerParagraph = document.querySelector('#paragraph-inner')
+    const phrases = ['You ta de brincation uite me, cara?', 'É sério isso?', "Você sabe que o botão \"SIM\" é clicável, né?", "Tu vai ficar tentando mesmo?", "Não, beleza, fique aí clicando nesse troço!"]
+
+    countNo++
+
+    if (countNo % 4 == 0) {
+        let phrase = phrases[Math.floor(Math.random()*phrases.length)]
+        innerParagraph.innerHTML = phrase
+        startModal('div-outside1')
+    }
 }
 
 yesBtn.addEventListener('click', yesAnswerMethod)

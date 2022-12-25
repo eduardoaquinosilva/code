@@ -97,6 +97,62 @@ main {
     100% {opacity: 0; font-size: 20em;}
 }
 
+/* Modal */
+.outside1 {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    margin: auto;
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.outside1.show {
+    display: flex;
+}
+
+.inside1 {
+    min-width: 250px;
+    width: 30%;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    background: #fff;
+    padding: 1%;
+    border-radius: 30px;
+}
+
+.show .inside {
+    animation: modal 0.5s;
+}
+
+.inside1 p {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Goldman', cursive;
+    color: #003398;
+}
+
+.inside1 p:first-child {
+    margin-bottom: 5%;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 /* Responsivity */
 /* SCREEN MAX-WIDTH 1600PX */
 @media screen and (max-width: 1600px) {
